@@ -5,20 +5,7 @@
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter-Latin.woff2') format('woff2');
-<<<<<<< HEAD
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF; /* Basic Latin */
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Latin.woff2') format('woff2');
-  font-weight: 700;
-=======
   font-weight: 300 700;
->>>>>>> 7a6de95d6e65d1609ec3499e5e98a9abb8b92de3
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF; /* Basic Latin */
