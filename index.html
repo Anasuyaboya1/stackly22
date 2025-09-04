@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <title>Stackly22</title>
 
     <!-- ✅ Load Inter font ONLY once (Google Fonts, cleaner than duplicating) -->
@@ -35,5 +36,27 @@
         } catch (e) {}
       })();
     </script>
+=======
+
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      if(theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch(e) {}
+  })();
+</script>
+
+>>>>>>> 7a6de95d6e65d1609ec3499e5e98a9abb8b92de3
   </body>
 </html>
