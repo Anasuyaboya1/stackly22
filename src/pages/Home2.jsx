@@ -414,10 +414,10 @@ export default function Home2() {
       {/* Before & After Section */}
       <section className={`w-full py-16 sm:py-20 ${theme === "dark" ? "bg-[#000]" : "bg-[#FFF]"}`} id="before-after">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: theme === "dark" ? "#fff" : "#000" }}>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6" style={{ color: theme === "dark" ? "#fff" : "#000" }}>
             {t.beforeAfterTitle}
           </h2>
-          <p className={`text-lg mb-12 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+          <p className={`text-lg leading-relaxed mb-12 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
             {t.beforeAfterDesc}
           </p>
           <div className="relative w-full h-[500px] max-w-full mx-auto">
@@ -433,7 +433,7 @@ export default function Home2() {
       {/* Logos Section */}
       <section className={`w-full py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className={`text-3xl font-bold text-center mb-4 ${theme === "dark" ? "text-white" : "text-black"}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-center mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
             {t.partneredTitle} <span style={{ color: "#00BFFF" }}>{t.partneredHighlight}</span>
           </h2>
           <div className="overflow-hidden relative">
@@ -460,7 +460,7 @@ export default function Home2() {
       {/* Special Offers Section */}
       <section className={`w-full py-16 ${theme === "dark" ? "bg-[#111]" : "bg-[#f0f9ff]"}`} id="special-offers">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12 text-[#00BFFF]">{t.specialOffers}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-12 text-[#00BFFF]">{t.specialOffers}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {properties.map((property) => (
               <Link
@@ -485,7 +485,7 @@ export default function Home2() {
                   <h3 className={`text-lg font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-800"}`}>
                     {property.title}
                   </h3>
-                  <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+                  <p className={`text-lg leading-relaxed ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}> 
                     {property.location}
                   </p>
                 </div>
@@ -504,10 +504,10 @@ export default function Home2() {
     {/* Decorative top border accent */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-blue-500 rounded-full"></div>
 
-    <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
+    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-800">
       {t.subscribeTitle}
     </h2>
-    <p className="mb-8 text-gray-600 text-lg">
+    <p className="mb-8 text-gray-600 text-lg leading-relaxed">
       {t.subscribeDesc}
     </p>
 

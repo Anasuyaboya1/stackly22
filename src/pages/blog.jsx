@@ -281,48 +281,95 @@ const Blog = () => {
       </section>
 
       {/* ================= FEATURED ARTICLE ================= */}
-      <section className={`py-20 px-6 transition-colors duration-500 ${isDark ? "bg-[#181818] text-white" : "bg-[#f0f8ff] text-black"}`}>
-        <h2 className={`text-4xl md:text-5xl font-bold text-center mb-12 ${isDark ? "text-white" : "text-black"}`}>
-          {t.featured} <span className="text-[#00bfff]">{t.article}</span>
-        </h2>
-        <div className={`group relative flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 ${isDark ? "bg-[#222]" : "bg-white"}`}>
-          {/* Image Section - LEFT */}
-          <div className="w-full md:w-1/2 relative overflow-hidden">
-            <img
-              src={t.featuredArticle.image}
-              alt={t.featuredArticle.title}
-              className="w-full h-64 md:h-[400px] object-cover transform transition duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            <div className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full shadow ${isDark ? "bg-[#00bfff] text-black" : "bg-[#00bfff] text-black"}`}>
-              {t.featuredArticle.tag}
-            </div>
-          </div>
-          {/* Content Section - RIGHT */}
-          <div className="w-full md:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
-            <h3 className={`text-3xl lg:text-4xl font-bold mb-4 ${isDark ? "text-white" : "text-black"}`}>{t.featuredArticle.title}</h3>
-            <p className={`text-lg leading-relaxed mb-6 text-justify ${isDark ? "text-gray-300" : "text-gray-700"}`}>{t.featuredArticle.description}</p>
-            <div className={`flex flex-wrap items-center gap-3 text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}>
-              <span>{t.featuredArticle.author}</span>
-              <span className="opacity-40">•</span>
-              <span>{new Date(t.featuredArticle.createdAt).toLocaleDateString()}</span>
-              <span className="opacity-40">•</span>
-              <span>{t.featuredArticle.readTime}</span>
-            </div>
-            <a
-              href={t.featuredArticle.link}
-              className={`inline-flex items-center w-fit mt-6 px-6 py-3 rounded-full font-semibold transition ${isDark ? "bg-blue-500 hover:bg-blue-400 text-white" : "bg-[#00bfff] text-white hover:bg-[#009acd]"}`}
-            >
-              {t.readMore} →
-            </a>
-          </div>
-        </div>
-      </section>
+      <section
+  className={`py-20 px-6 transition-colors duration-500 ${
+    isDark ? "bg-[#181818] text-white" : "bg-[#f0f8ff] text-black"
+  }`}
+>
+  {/* Heading */}
+  <h2
+    className={`text-4xl md:text-5xl font-bold text-center mb-6 ${
+      isDark ? "text-white" : "text-black"
+    }`}
+  >
+    {t.featured}{" "}
+    <span className="text-[#00bfff]">{t.article}</span>
+  </h2>
+
+  {/* Main Card */}
+  <div
+    className={`group relative flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 ${
+      isDark ? "bg-[#222]" : "bg-white"
+    }`}
+  >
+    {/* Image Section */}
+    <div className="w-full md:w-1/2 relative overflow-hidden">
+      <img
+        src={t.featuredArticle.image}
+        alt={t.featuredArticle.title}
+        className="w-full h-64 md:h-[400px] object-cover transform transition duration-500 group-hover:scale-105"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+      {/* Tag */}
+      <div
+        className={`absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full shadow ${
+          isDark ? "bg-[#00bfff] text-black" : "bg-[#00bfff] text-black"
+        }`}
+      >
+        {t.featuredArticle.tag}
+      </div>
+    </div>
+
+    {/* Content Section */}
+    <div className="w-full md:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
+      <h3
+        className={`text-3xl lg:text-4xl font-bold mb-4 ${
+          isDark ? "text-white" : "text-black"
+        }`}
+      >
+        {t.featuredArticle.title}
+      </h3>
+      <p
+        className={`text-lg leading-relaxed mb-6 ${
+          isDark ? "text-gray-300" : "text-gray-700"
+        }`}
+      >
+        {t.featuredArticle.description}
+      </p>
+      {/* Meta info */}
+      <div
+        className={`flex flex-wrap items-center gap-3 text-sm ${
+          isDark ? "text-gray-400" : "text-gray-600"
+        }`}
+      >
+        <span>{t.featuredArticle.author}</span>
+        <span className="opacity-40">•</span>
+        <span>
+          {new Date(t.featuredArticle.createdAt).toLocaleDateString()}
+        </span>
+        <span className="opacity-40">•</span>
+        <span>{t.featuredArticle.readTime}</span>
+      </div>
+      {/* Button */}
+      <a
+        href={t.featuredArticle.link}
+        className={`inline-flex items-center w-fit mt-6 px-6 py-3 rounded-full font-semibold transition ${
+          isDark
+            ? "bg-blue-500 hover:bg-blue-400 text-white"
+            : "bg-[#00bfff] text-white hover:bg-[#009acd]"
+        }`}
+      >
+        {t.readMore} →
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* ================= LATEST BLOGS ================= */}
       <section className={`py-16 ${isDark ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className={`text-4xl md:text-5xl font-bold text-center mb-12 ${textMain}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-center mb-6 ${textMain}`}>
             {t.latest} <span className="text-[#00bfff]">{t.realEstateBlogs}</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -360,7 +407,7 @@ const Blog = () => {
       {/* ================= SERVICE COMPARISON ================= */}
       <section className={`py-16 ${isDark ? "bg-[#222]" : "bg-[#00bfff]"}`}>
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6 text-white">
             {t.comparison}
           </h2>
           <div className="overflow-x-auto">
@@ -391,7 +438,7 @@ const Blog = () => {
       {/* ================= MYTHS & FACTS ================= */}
       <section className={`py-16 ${isDark ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#00bfff]">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6 text-[#00bfff]">
             {t.mythsFactsTitle}
           </h2>
           <div className="grid md:grid-cols-2 gap-10">

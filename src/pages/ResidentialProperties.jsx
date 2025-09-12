@@ -8,58 +8,58 @@ import a3 from "../assets/a3.jpg";
 // Multilingual translations
 const translations = {
   en: {
-    heroTitle: "Explore Premium",
-    heroHighlight: "Commercial Spaces",
-    featuredTitle: "Commercial Spaces",
-    featuredDesc: "Our commercial spaces are located in prime business districts, offering high visibility, easy access, and modern layouts. Offices, retail outlets, co-working hubs, and warehouses are designed to meet diverse business needs. Each property provides ample parking, 24/7 security, and smart infrastructure to help your business thrive. Close proximity to transport hubs, restaurants, and business services ensures convenience and connectivity for your team and clients.",
+    heroTitle: "Discover Your Dream Home",
+    heroHighlight: "Residential Properties",
+    featuredTitle: "Residential Properties",
+    featuredDesc: "Our residential properties are located in peaceful neighborhoods, offering comfort, security, and modern amenities. Choose from apartments, villas, and gated communities designed for families, professionals, and retirees. Each home features spacious layouts, green spaces, and easy access to schools, hospitals, and shopping centers.",
     featuredList: [
-      { icon: "📍", text: "Facing West" },
-      { icon: "🏠", text: "Location: FL, USA" },
-      { icon: "🛏️", text: "3 BHK" }
+      { icon: "📍", text: "Prime Location" },
+      { icon: "🏠", text: "Type: Apartment/Villa" },
+      { icon: "🛏️", text: "2-5 BHK" }
     ],
     contactNow: "Contact Now",
-    whoTitle: "Who Should Buy Our Spaces?",
-    whoDesc: "Our Commercial Spaces are ideal for startups, established businesses, investors, and entrepreneurs seeking secure, modern, and well-connected business locations.",
+    whoTitle: "Who Should Buy Our Homes?",
+    whoDesc: "Our Residential Properties are ideal for families, working professionals, investors, and retirees seeking a safe, modern, and well-connected living environment.",
     whoCards: [
-      { title: "Startups", desc: "Flexible spaces for growing teams and innovation." },
-      { title: "Established Businesses", desc: "Prime locations for visibility and expansion." },
-      { title: "Investors", desc: "High-growth properties with excellent rental returns." },
-      { title: "Entrepreneurs", desc: "Modern layouts for retail, offices, and co-working." }
+      { title: "Families", desc: "Spacious homes with parks and play areas." },
+      { title: "Professionals", desc: "Convenient locations near business hubs." },
+      { title: "Investors", desc: "High-demand properties with great rental returns." },
+      { title: "Retirees", desc: "Peaceful communities with all amenities." }
     ],
-    benefitsTitle: "Why Choose Our Commercial Spaces?",
+    benefitsTitle: "Why Choose Our Residential Properties?",
     benefits: [
-      { title: "Prime Locations", desc: "Close to IT hubs, schools, hospitals, and shopping centers." },
+      { title: "Peaceful Neighborhoods", desc: "Safe, green, and family-friendly environments." },
       { title: "Modern Amenities", desc: "Clubhouse, swimming pool, gyms, and kids’ play areas." },
       { title: "Luxury & Comfort", desc: "Spacious layouts and high-quality interiors." },
       { title: "Investment Value", desc: "Excellent potential for appreciation and rental income." },
       { title: "Trusted Developers", desc: "Reliable projects with clear documentation and quality build." },
-      { title: "Flexible Options", desc: "Choose from offices, retail, and co-working spaces." }
+      { title: "Flexible Options", desc: "Choose from apartments, villas, and gated communities." }
     ],
     faqTitle: "Frequently Asked Questions",
     faqs: [
       {
-        question: "What types of Commercial Spaces are available?",
-        answer: "We offer offices, retail outlets, co-working hubs, and warehouses designed to suit different business needs and budgets."
+        question: "What types of Residential Properties are available?",
+        answer: "We offer apartments, villas, and gated communities to suit different family sizes and budgets."
       },
       {
         question: "Do you provide budget-friendly options?",
-        answer: "Yes, we have affordable spaces as well as premium and luxury options."
+        answer: "Yes, we have affordable homes as well as premium and luxury options."
       },
       {
         question: "Are the properties located in prime areas?",
-        answer: "Absolutely. All our projects are strategically located near business hubs, transport, and amenities."
+        answer: "Absolutely. All our projects are strategically located near schools, hospitals, and shopping centers."
       },
       {
         question: "Is financing support available?",
-        answer: "Yes, we provide assistance with bank tie-ups, business loans, and easy EMI options to make your purchase hassle-free."
+        answer: "Yes, we provide assistance with bank tie-ups, home loans, and easy EMI options to make your purchase hassle-free."
       },
       {
         question: "Can I expect good returns on investment?",
-        answer: "Yes, our commercial properties are located in high-growth areas with excellent potential for appreciation and rental income."
+        answer: "Yes, our residential properties are located in high-demand areas with excellent potential for appreciation and rental income."
       }
     ],
-    ctaTitle: "Ready to Book Your Dream Space?",
-    ctaDesc: "Explore our exclusive range of commercial spaces today and find a location that matches your business vision.",
+    ctaTitle: "Ready to Book Your Dream Home?",
+    ctaDesc: "Explore our exclusive range of residential properties today and find a home that matches your lifestyle.",
     ctaBtn: "Contact Us Today"
   },
   ar: {
@@ -368,7 +368,7 @@ export default function CommercialSpacesPage() {
           style={{ background: "rgba(0,191,255,0.7)" }}
         ></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 drop-shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-8 drop-shadow-lg">
             {t.benefitsTitle}
           </h2>
           <div className="grid lg:grid-cols-3 gap-8">
@@ -445,7 +445,7 @@ export default function CommercialSpacesPage() {
 >
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
     <div className="space-y-6 flex flex-col justify-center h-full">
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+  <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 text-gray-800">
         {t.ctaTitle}
       </h2>
       <p

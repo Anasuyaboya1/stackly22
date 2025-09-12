@@ -276,10 +276,10 @@ export default function PalmGroveVillasPage() {
           </div>
           {/* Right: Text Content */}
           <div className="space-y-4 animate-fadeInRight">
-            <h2 className={`text-3xl font-bold ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
+            <h2 className={`text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               {t.featuredTitle}
             </h2>
-            <p className={`${theme === "dark" ? "text-gray-300" : "text-gray-700"}`} style={{ textAlign: "justify" }}>
+            <p className={`text-lg leading-relaxed mb-4 ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`} style={{ textAlign: "justify" }}>
               {t.featuredDesc}
             </p>
             <ul className={`space-y-2 ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>
@@ -303,18 +303,18 @@ export default function PalmGroveVillasPage() {
       <section className={`py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-snug" style={{ color: theme === "dark" ? "#00bfff" : "#222" }}>
+            <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2" style={{ color: theme === "dark" ? "#00bfff" : "#222" }}>
               {t.whoTitle}
             </h2>
-            <p className={`text-lg mb-6 text-justify ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>
+            <p className={`text-lg leading-relaxed mb-4 text-justify ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>
               {t.whoDesc}
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-6">
             {t.whoCards.map((card) => (
               <div key={card.title} className={`p-6 rounded-2xl shadow-md hover:shadow-lg transition ${theme === "dark" ? "bg-[#222]" : "bg-[#fdfcf9]"}`}>
-                <h3 className="text-xl font-semibold mb-2" style={{ color: "#00bfff" }}>{card.title}</h3>
-                <p className={theme === "dark" ? "text-gray-200" : "text-gray-600"}>{card.desc}</p>
+                <h3 className="text-xl font-semibold leading-tight mb-2" style={{ color: "#00bfff" }}>{card.title}</h3>
+                <p className={`text-lg leading-relaxed mb-4 ${theme === "dark" ? "text-gray-200" : "text-gray-600"}`}>{card.desc}</p>
               </div>
             ))}
           </div>
@@ -325,12 +325,12 @@ export default function PalmGroveVillasPage() {
       <section className="relative w-full bg-cover bg-center py-20" style={{ backgroundImage: `url(${a2})` }}>
         <div className="absolute inset-0" style={{ background: "rgba(0,191,255,0.7)" }}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 drop-shadow-lg">{t.benefitsTitle}</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-8 drop-shadow-lg">{t.benefitsTitle}</h2>
           <div className="grid lg:grid-cols-3 gap-8">
             {t.benefits.map((card) => (
               <div key={card.title} className={`backdrop-blur-md p-6 rounded-2xl shadow-lg hover:scale-105 transition ${theme === "dark" ? "bg-[#222] text-white" : "bg-white text-black"}`}>
-                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                <p className="text-sm">{card.desc}</p>
+                <h3 className="text-xl font-semibold leading-tight mb-3">{card.title}</h3>
+                <p className="text-lg leading-relaxed mb-4">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -340,15 +340,15 @@ export default function PalmGroveVillasPage() {
       {/* FAQs */}
       <section className={`py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12" style={{ color: "#00bfff" }}>{t.faqTitle}</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight text-center mb-8" style={{ color: "#00bfff" }}>{t.faqTitle}</h2>
           <div className="grid lg:grid-cols-2 gap-6">
             {t.faqs.map((faq, index) => (
               <div key={index} className={`rounded-2xl shadow-md p-6 cursor-pointer transition hover:shadow-lg ${theme === "dark" ? "bg-[#222] text-white" : "bg-white text-black"}`} onClick={() => toggleFAQ(index)}>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold leading-tight">{faq.question}</h3>
                   <span className="font-bold text-xl" style={{ color: "#00bfff" }}>{openIndex === index ? "-" : "+"}</span>
                 </div>
-                {openIndex === index && <p className={theme === "dark" ? "mt-4 text-gray-200" : "mt-4 text-gray-600"}>{faq.answer}</p>}
+                {openIndex === index && <p className={`text-lg leading-relaxed mb-4 mt-4 ${theme === "dark" ? "text-gray-200" : "text-gray-600"}`}>{faq.answer}</p>}
               </div>
             ))}
           </div>
@@ -363,16 +363,8 @@ export default function PalmGroveVillasPage() {
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
           <div className="space-y-6 flex flex-col justify-center h-full">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
-              {t.ctaTitle}
-            </h2>
-            <p
-              className={`text-lg ${
-                theme === "dark" ? "text-gray-200" : "text-gray-600"
-              }`}
-            >
-              {t.ctaDesc}
-            </p>
+            <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 text-gray-800">{t.ctaTitle}</h2>
+            <p className={`text-lg leading-relaxed mb-4 ${theme === "dark" ? "text-gray-200" : "text-gray-600"}`}>{t.ctaDesc}</p>
             <button
               className={`px-8 py-4 font-semibold rounded-xl shadow-md transition self-start lg:self-auto ${
                 theme === "dark"

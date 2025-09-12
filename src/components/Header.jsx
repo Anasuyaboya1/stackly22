@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import ScrollToTop from '../pages/scroll-top';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
@@ -157,22 +157,10 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Language Dropdown */}
-          <div className="mr-4">
-            <select
-              value={language}
-              onChange={e => setLanguage(e.target.value)}
-              className="border rounded px-2 py-1"
-              aria-label={t.language}
-            >
-              <option value="en">English</option>
-              <option value="ar">العربية</option>
-              <option value="he">עברית</option>
-            </select>
-          </div>
+          
 
           {/* Desktop Navigation */}
-          <div className="hidden min-[480px]:flex items-center space-x-8">
+          <div className="hidden min-[920px]:flex items-center space-x-8">
             {/* Home Dropdown */}
             <div
               className="relative"
@@ -258,6 +246,19 @@ const Header = () => {
             >
               {t.contact}
             </Link>
+{/* Language Dropdown */}
+          <div className="mr-4">
+            <select
+              value={language}
+              onChange={e => setLanguage(e.target.value)}
+              className="border rounded px-2 py-1"
+              aria-label={t.language}
+            >
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+              <option value="he">עברית</option>
+            </select>
+          </div>
 
             {/* Dark Mode Toggle */}
             <button
@@ -299,7 +300,7 @@ const Header = () => {
           </div>
 
           {/* Mobile icons - Only visible on very small screens */}
-          <div className="flex items-center space-x-4 min-[480px]:hidden">
+          <div className="flex items-center space-x-4 min-[920px]:hidden">
             {/* Dark Mode Toggle (Mobile) */}
             <button
               className={`w-10 h-10 rounded-full border flex items-center justify-center transition-colors duration-200 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 hover:bg-gray-700' : 'bg-blue-100 border-blue-300 hover:bg-blue-200'}`}
@@ -429,4 +430,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header; 

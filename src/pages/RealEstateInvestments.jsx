@@ -333,7 +333,7 @@ export default function RealEstateInvestmentsPage() {
       {/* FAQs */}
       <section className={`py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12" style={{ color: "#00bfff" }}>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight text-center mb-8" style={{ color: "#00bfff" }}>
             {t.faqTitle}
           </h2>
           <div className="grid lg:grid-cols-2 gap-6">
@@ -368,7 +368,7 @@ export default function RealEstateInvestmentsPage() {
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
           <div className="space-y-6 flex flex-col justify-center h-full">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+            <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 text-gray-800">
               {t.ctaTitle}
             </h2>
             <p

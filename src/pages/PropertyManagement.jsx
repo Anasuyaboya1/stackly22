@@ -331,7 +331,7 @@ export default function PropertyManagementPage() {
       <section className={`py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-snug" style={{ color: theme === "dark" ? "#00bfff" : "#222" }}>
+            <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2" style={{ color: theme === "dark" ? "#00bfff" : "#222" }}>
               {t.whoTitle}
             </h2>
             <p className={`text-lg mb-6 text-justify ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>
@@ -357,7 +357,7 @@ export default function PropertyManagementPage() {
       <section className="relative w-full bg-cover bg-center py-20" style={{ backgroundImage: `url(${a2})` }}>
         <div className="absolute inset-0" style={{ background: "rgba(0,191,255,0.7)" }}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 drop-shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-8 drop-shadow-lg">
             {t.benefitsTitle}
           </h2>
           <div className="grid lg:grid-cols-3 gap-8">
@@ -374,7 +374,7 @@ export default function PropertyManagementPage() {
       {/* FAQs */}
       <section className={`py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12" style={{ color: "#00bfff" }}>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight text-center mb-8" style={{ color: "#00bfff" }}>
             {t.faqTitle}
           </h2>
           <div className="grid lg:grid-cols-2 gap-6">
@@ -409,7 +409,7 @@ export default function PropertyManagementPage() {
       >
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
           <div className="space-y-6 flex flex-col justify-center h-full">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+            <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 text-gray-800">
               {t.ctaTitle}
             </h2>
             <p

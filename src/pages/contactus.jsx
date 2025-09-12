@@ -223,7 +223,7 @@ const ContactUs = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-5xl md:text-7xl font-extrabold text-white text-center drop-shadow-lg"
+            className="text-5xl md:text-7xl font-extrabold leading-tight text-white text-center drop-shadow-lg"
           >
             {t.hero}
           </motion.h1>
@@ -245,8 +245,8 @@ const ContactUs = () => {
             <div className="text-blue-600 dark:text-blue-400 flex justify-center mb-4">
               {card.icon}
             </div>
-            <h3 className="font-bold text-lg mb-2">{card.title}</h3>
-            <p>{card.info}</p>
+            <h3 className="font-bold text-lg leading-tight mb-2">{card.title}</h3>
+            <p className="text-lg leading-relaxed">{card.info}</p>
           </motion.div>
         ))}
       </section>
@@ -258,7 +258,7 @@ const ContactUs = () => {
             isDark ? "bg-black text-white" : "bg-white text-black"
           }`}
         >
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-8">
             {t.sendMessage}
           </h2>
           <form className="grid gap-6">
@@ -289,21 +289,21 @@ const ContactUs = () => {
 
       {/* 4) OFFICES & MAP */}
       <section className="py-20 px-6 md:px-20">
-        <h2 className="text-3xl font-bold text-center mb-12">{t.offices}</h2>
+  <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-12">{t.offices}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <Building2 className="text-blue-600 dark:text-blue-400 w-6 h-6" />
               <div>
-                <h3 className="font-bold">{t.officeCity}</h3>
-                <p>{t.officeLocation}</p>
+                <h3 className="font-bold text-xl leading-tight">{t.officeCity}</h3>
+                <p className="text-lg leading-relaxed">{t.officeLocation}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Clock className="text-blue-600 dark:text-blue-400 w-6 h-6" />
               <div>
-                <h3 className="font-bold">{t.officeHours}</h3>
-                <p>{t.officeTiming}</p>
+                <h3 className="font-bold text-xl leading-tight">{t.officeHours}</h3>
+                <p className="text-lg leading-relaxed">{t.officeTiming}</p>
               </div>
             </div>
           </div>
@@ -325,7 +325,7 @@ const ContactUs = () => {
           isDark ? "bg-gray-900" : "bg-gray-50"
         }`}
       >
-        <h2 className="text-3xl font-bold text-center mb-12">{t.meetTeam}</h2>
+  <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-12">{t.meetTeam}</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {t.team.map((member, i) => (
             <motion.div
@@ -336,8 +336,8 @@ const ContactUs = () => {
               }`}
             >
               <Users className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
-              <h3 className="font-bold">{member.name}</h3>
-              <p>{member.role}</p>
+              <h3 className="font-bold text-xl leading-tight">{member.name}</h3>
+              <p className="text-lg leading-relaxed">{member.role}</p>
               <div className="flex justify-center gap-3 mt-3 text-blue-600 dark:text-blue-400">
                 <a href="https://www.linkedin.com/company/example" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5 cursor-pointer" />
@@ -356,7 +356,7 @@ const ContactUs = () => {
 
       {/* 6) FAQ */}
       <section className="py-20 px-6 md:px-20">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-12">
           {t.faqTitle}
         </h2>
         <div className="max-w-3xl mx-auto">
@@ -381,7 +381,7 @@ const ContactUs = () => {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-2 text-gray-600 dark:text-gray-300"
+                  className="mt-2 text-lg leading-relaxed text-gray-600 dark:text-gray-300"
                 >
                   {faq.answer}
                 </motion.p>

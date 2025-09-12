@@ -240,7 +240,7 @@ function ImpactMetric({ value, suffix, label, delay, color }) {
       style={{ transitionDelay: `${delay}ms` }}
     >
       <h3 className="text-5xl font-extrabold mb-2 text-[#00BFFF] drop-shadow-lg">{count}{suffix}</h3>
-      <p className="mt-2 text-base font-semibold text-gray-700">{label}</p>
+  <p className="mt-2 text-lg leading-relaxed font-semibold text-gray-700">{label}</p>
     </div>
   );
 }
@@ -379,7 +379,7 @@ export default function Home1() {
           <h1 className="text-4xl md:text-6xl font-bold" style={{ color: "#fff" }}>
             {t.heroTitle} <span style={{ color: "#00BFFF" }}>{t.heroHighlight}</span>
           </h1>
-          <p className="mt-4 max-w-4xl text-lg md:text-xl text-white">{t.heroDesc}</p>
+          <p className="mt-4 max-w-4xl text-lg leading-relaxed md:text-xl text-white">{t.heroDesc}</p>
           <button
             onClick={() => window.scrollTo({ top: document.getElementById('about-us')?.offsetTop || 0, behavior: 'smooth' })}
             className={`${theme === 'dark' ? 'bg-[#00BFFF] text-white hover:bg-[#00CFFF]' : 'bg-[#00BFFF] text-white hover:bg-[#00CFFF]'} px-6 py-3 mt-5 rounded-lg transition-colors font-semibold`}
@@ -392,10 +392,10 @@ export default function Home1() {
       {/* Featured Listings Section */}
       <section className={`w-full py-16 sm:py-20 ${theme === "dark" ? "bg-[#000]" : "bg-[#FFF]"}`} id="featured-listings">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4" style={{ color: theme === "dark" ? "#fff" : "#000" }}>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6" style={{ color: theme === "dark" ? "#fff" : "#000" }}>
             {t.featuredListings}
           </h2>
-          <p className={`text-lg text-center mb-12 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{t.featuredDesc}</p>
+          <p className={`text-lg leading-relaxed text-center mb-12 ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{t.featuredDesc}</p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {Object.keys(categories).map((key) => (
               <button
@@ -419,7 +419,7 @@ export default function Home1() {
             </div>
             <div className="text-left">
               <h3 className="text-3xl font-semibold mb-4 text-[#00BFFF]">{categories[activeCategory].heading}</h3>
-              <p className={`text-lg text-justify ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{categories[activeCategory].desc}</p>
+              <p className={`text-lg leading-relaxed text-justify ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{categories[activeCategory].desc}</p>
             </div>
           </div>
         </div>
@@ -432,8 +432,8 @@ export default function Home1() {
       <section className={`w-full py-20 ${theme === "dark" ? "bg-[#0a0f1c] text-white" : "bg-[#f0f9ff] text-gray-900"}`} id="why-choose-us">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold mb-4">{t.whyChooseUs}</h2>
-            <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">{t.whyDesc}</p>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{t.whyChooseUs}</h2>
+            <p className="max-w-2xl mx-auto text-lg leading-relaxed text-gray-600 dark:text-gray-300">{t.whyDesc}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
@@ -445,7 +445,7 @@ export default function Home1() {
               <div key={i} className="flex flex-col items-center text-center p-6 rounded-xl transition-all duration-300 hover:bg-[#00BFFF]/10 hover:shadow-lg cursor-pointer group">
                 <div className="text-6xl mb-4 transition-transform duration-300 group-hover:scale-125 group-hover:animate-bounce">{item.icon}</div>
                 <h3 className="text-xl font-semibold text-[#00BFFF] mb-3">{item.title}</h3>
-                <p className={`text-base leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>{item.desc}</p>
+                <p className={`text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -460,8 +460,8 @@ export default function Home1() {
       <section className={`w-full py-20 ${theme === "dark" ? "bg-[#0a0f1c]" : "bg-[#f8fbff]"}`} id="listings">
         <div className="w-full px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 text-[#00BFFF]">{t.latestListings}</h2>
-            <p className={`max-w-3xl mx-auto text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{t.latestDesc}</p>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-[#00BFFF]">{t.latestListings}</h2>
+            <p className={`max-w-3xl mx-auto text-lg leading-relaxed ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>{t.latestDesc}</p>
           </div>
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -476,8 +476,8 @@ export default function Home1() {
                 </div>
                 <div className="p-8 text-center">
                   <h3 className="text-2xl font-semibold mb-3 text-[#00BFFF]">{item.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-2">{item.specs}</p>
-                  <p className="font-bold text-2xl mb-5 text-gray-800 dark:text-gray-100">{item.price}</p>
+                  <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-2">{item.specs}</p>
+                  <p className="font-bold text-2xl leading-relaxed mb-5 text-gray-800 dark:text-gray-100">{item.price}</p>
                   <a href={item.link} className="inline-block bg-[#00BFFF] text-white font-medium py-3 px-8 rounded-lg hover:bg-[#009acd] transition">{t.viewDetails}</a>
                 </div>
               </div>
@@ -495,8 +495,8 @@ export default function Home1() {
       {/* Testimonials Section */}
       <section className={`w-full py-20 ${theme === "dark" ? "bg-[#0d1b2a]" : "bg-[#e6f7ff]"}`} id="testimonials">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-[#00BFFF] drop-shadow-lg">{t.testimonials}</h2>
-          <p className={`max-w-2xl mx-auto text-lg mb-12 ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>{t.testimonialsDesc}</p>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-[#00BFFF] drop-shadow-lg">{t.testimonials}</h2>
+          <p className={`max-w-2xl mx-auto text-lg leading-relaxed mb-12 ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>{t.testimonialsDesc}</p>
           <div className="grid gap-10 md:grid-cols-3">
             {[
               { name: "Sarah Johnson", role: t.familyHome, text: t.topQualityDesc, img: "https://randomuser.me/api/portraits/women/44.jpg" },
@@ -507,8 +507,8 @@ export default function Home1() {
                 <div className="flex flex-col items-center">
                   <img src={tt.img} alt={tt.name} className="w-16 h-16 rounded-full border-2 border-[#00BFFF] mb-4" />
                   <h3 className="text-lg font-semibold text-[#00BFFF] drop-shadow">{tt.name}</h3>
-                  <p className={`text-sm mb-4 ${theme === "dark" ? "text-blue-200" : "text-blue-700"}`}>{tt.role}</p>
-                  <p className={`italic text-base leading-relaxed ${theme === "dark" ? "text-gray-100" : "text-gray-700"}`}>{tt.text}</p>
+                  <p className={`text-lg leading-relaxed mb-4 ${theme === "dark" ? "text-blue-200" : "text-blue-700"}`}>{tt.role}</p>
+                  <p className={`italic text-lg leading-relaxed ${theme === "dark" ? "text-gray-100" : "text-gray-700"}`}>{tt.text}</p>
                 </div>
               </div>
             ))}
@@ -524,7 +524,7 @@ export default function Home1() {
       {/* Impact Section */}
       <section className="w-full relative py-20" style={{ background: "linear-gradient(135deg, #00BFFF 0%, #0077b6 100%)" }}>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-14 text-white drop-shadow-lg">{t.impact}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-14 text-white drop-shadow-lg">{t.impact}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             <ImpactMetric value={250} suffix="+" label={t.projectsCompleted} delay={0} color="#fff" />
             <ImpactMetric value={50} suffix="+" label={t.ongoingConstructions} delay={100} color="#fff" />
@@ -542,8 +542,8 @@ export default function Home1() {
       {/* Custom Package Form */}
       <div className="relative">
         <div className={`max-w-full mx-auto shadow-lg rounded-xl p-6 ${theme === 'dark' ? 'bg-[#181818] text-white' : 'bg-white text-gray-900'}`}>
-          <h2 className={`text-4xl font-bold text-center mb-6 mt-10 ${theme === 'dark' ? 'text-[#00BFFF]' : 'text-blue-400'}`}>{t.customPackage}</h2>
-          <p className={`text-center mb-10 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{t.customDesc}</p>
+          <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-center mb-6 mt-10 ${theme === 'dark' ? 'text-[#00BFFF]' : 'text-blue-400'}`}>{t.customPackage}</h2>
+          <p className={`text-lg leading-relaxed text-center mb-10 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{t.customDesc}</p>
           <form onSubmit={handleSubmit} className={`p-8 rounded-lg shadow-lg space-y-6 ${theme === 'dark' ? 'bg-[#1f1f1f]' : 'bg-white'}`}>
             <div>
               <label className="block font-semibold mb-2">{t.name}</label>

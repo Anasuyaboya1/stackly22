@@ -88,15 +88,28 @@ export default function UserDetailsSection() {
         <h2 className={clsx('text-2xl font-bold mb-4', 'text-[#00bfff]')}>Properties</h2>
         <form className="mb-6 w-full" onSubmit={handlePropertySubmit}>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
-            <input type="text" name="title" value={propertyForm.title} onChange={e => setPropertyForm(prev => ({ ...prev, title: e.target.value }))} placeholder="Property Title" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
-            <input type="text" name="location" value={propertyForm.location} onChange={e => setPropertyForm(prev => ({ ...prev, location: e.target.value }))} placeholder="Location" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            <div className="flex-1 min-w-0">
+              <label htmlFor="property-title" className="block mb-1 font-medium">Property Title</label>
+              <input id="property-title" type="text" name="title" value={propertyForm.title} onChange={e => setPropertyForm(prev => ({ ...prev, title: e.target.value }))} placeholder="Property Title" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
+            <div className="flex-1 min-w-0">
+              <label htmlFor="property-location" className="block mb-1 font-medium">Location</label>
+              <input id="property-location" type="text" name="location" value={propertyForm.location} onChange={e => setPropertyForm(prev => ({ ...prev, location: e.target.value }))} placeholder="Location" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
-            <input type="text" name="type" value={propertyForm.type} onChange={e => setPropertyForm(prev => ({ ...prev, type: e.target.value }))} placeholder="Type (Apartment, Villa, etc.)" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
-            <input type="number" name="price" value={propertyForm.price} onChange={e => setPropertyForm(prev => ({ ...prev, price: e.target.value }))} placeholder="Price" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            <div className="flex-1 min-w-0">
+              <label htmlFor="property-type" className="block mb-1 font-medium">Type</label>
+              <input id="property-type" type="text" name="type" value={propertyForm.type} onChange={e => setPropertyForm(prev => ({ ...prev, type: e.target.value }))} placeholder="Type (Apartment, Villa, etc.)" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
+            <div className="flex-1 min-w-0">
+              <label htmlFor="property-price" className="block mb-1 font-medium">Price</label>
+              <input id="property-price" type="number" name="price" value={propertyForm.price} onChange={e => setPropertyForm(prev => ({ ...prev, price: e.target.value }))} placeholder="Price" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
           </div>
           <div className="mb-4">
-            <input type="text" name="image" value={propertyForm.image} onChange={e => setPropertyForm(prev => ({ ...prev, image: e.target.value }))} placeholder="Image URL" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            <label htmlFor="property-image" className="block mb-1 font-medium">Image URL</label>
+            <input id="property-image" type="text" name="image" value={propertyForm.image} onChange={e => setPropertyForm(prev => ({ ...prev, image: e.target.value }))} placeholder="Image URL" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
           </div>
           <div className="flex justify-center">
             <button type="submit" className={clsx('rounded px-5 py-2 text-base font-semibold transition', 'bg-[#00bfff] text-white hover:bg-[#0099cc]')}>Add Property</button>
@@ -129,12 +142,24 @@ export default function UserDetailsSection() {
         <h2 className={clsx('text-2xl font-bold mb-4', 'text-[#00bfff]')}>Recent Sales</h2>
         <form className="mb-6 w-full" onSubmit={handleSaleSubmit}>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
-            <input type="text" name="property" value={saleForm.property} onChange={e => setSaleForm(prev => ({ ...prev, property: e.target.value }))} placeholder="Property Title" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
-            <input type="text" name="agent" value={saleForm.agent} onChange={e => setSaleForm(prev => ({ ...prev, agent: e.target.value }))} placeholder="Agent Name" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            <div className="flex-1 min-w-0">
+              <label htmlFor="sale-property" className="block mb-1 font-medium">Property Title</label>
+              <input id="sale-property" type="text" name="property" value={saleForm.property} onChange={e => setSaleForm(prev => ({ ...prev, property: e.target.value }))} placeholder="Property Title" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
+            <div className="flex-1 min-w-0">
+              <label htmlFor="sale-agent" className="block mb-1 font-medium">Agent Name</label>
+              <input id="sale-agent" type="text" name="agent" value={saleForm.agent} onChange={e => setSaleForm(prev => ({ ...prev, agent: e.target.value }))} placeholder="Agent Name" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
-            <input type="date" name="date" value={saleForm.date} onChange={e => setSaleForm(prev => ({ ...prev, date: e.target.value }))} className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
-            <input type="number" name="price" value={saleForm.price} onChange={e => setSaleForm(prev => ({ ...prev, price: e.target.value }))} placeholder="Sale Price" className={clsx('border rounded px-4 py-3 text-lg flex-1 min-w-0', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            <div className="flex-1 min-w-0">
+              <label htmlFor="sale-date" className="block mb-1 font-medium">Date</label>
+              <input id="sale-date" type="date" name="date" value={saleForm.date} onChange={e => setSaleForm(prev => ({ ...prev, date: e.target.value }))} className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
+            <div className="flex-1 min-w-0">
+              <label htmlFor="sale-price" className="block mb-1 font-medium">Sale Price</label>
+              <input id="sale-price" type="number" name="price" value={saleForm.price} onChange={e => setSaleForm(prev => ({ ...prev, price: e.target.value }))} placeholder="Sale Price" className={clsx('border rounded px-4 py-3 text-lg w-full', theme === 'dark' ? 'bg-[#232b3b] text-white border-gray-700' : 'bg-white text-[#22223b] border-gray-300')} required />
+            </div>
           </div>
           <div className="flex justify-center">
             <button type="submit" className={clsx('rounded px-5 py-2 text-base font-semibold transition', 'bg-[#00bfff] text-white hover:bg-[#0099cc]')}>Add Sale</button>

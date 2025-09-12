@@ -345,7 +345,7 @@ export default function AboutHero() {
       {/* Timeline Section */}
       <section className={`w-full py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-14" style={{ color: "#00BFFF" }}>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6" style={{ color: "#00BFFF" }}>
             {t.journeyTitle}
           </h2>
           <div className="relative">
@@ -355,6 +355,7 @@ export default function AboutHero() {
                 <div key={item.year} className="relative flex items-center min-h-[180px]">
                   {idx % 2 === 0 ? (
                     <>
+                      {/* Left grid, year badge on right */}
                       <div className="w-1/2 flex justify-end pr-8">
                         <div className={`rounded-lg shadow-lg p-8 w-full max-w-md ml-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${theme === "dark" ? "bg-[#222]" : "bg-white"}`}>
                           <div className="font-bold mb-2" style={{ color: "#00BFFF" }}>{item.year}</div>
@@ -362,16 +363,19 @@ export default function AboutHero() {
                           <p className={theme === "dark" ? "text-gray-200" : "text-gray-700"}>{item.desc}</p>
                         </div>
                       </div>
-                      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center z-10">
-                        <span className="bg-[#00BFFF] text-white rounded-full px-4 py-2 font-bold text-lg shadow-lg">{item.year}</span>
+                      <div className="w-1/2 flex justify-start pl-8">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                          <span className="bg-[#00BFFF] text-white rounded-full px-4 py-2 font-bold text-lg shadow-lg">{item.year}</span>
+                        </div>
                       </div>
-                      <div className="w-1/2" />
                     </>
                   ) : (
                     <>
-                      <div className="w-1/2" />
-                      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center z-10">
-                        <span className="bg-[#00BFFF] text-white rounded-full px-4 py-2 font-bold text-lg shadow-lg">{item.year}</span>
+                      {/* Right grid, year badge on left */}
+                      <div className="w-1/2 flex justify-end pr-8">
+                        <div className="relative w-16 h-16 flex items-center justify-center">
+                          <span className="bg-[#00BFFF] text-white rounded-full px-4 py-2 font-bold text-lg shadow-lg">{item.year}</span>
+                        </div>
                       </div>
                       <div className="w-1/2 flex justify-start pl-8">
                         <div className={`rounded-lg shadow-lg p-8 w-full max-w-md mr-auto transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${theme === "dark" ? "bg-[#222]" : "bg-white"}`}>
@@ -392,7 +396,7 @@ export default function AboutHero() {
       {/* Vision, Mission, Values Cards Section */}
       <section className={`w-full py-16 ${theme === "dark" ? "bg-[#222]" : "bg-[#00BFFF]"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6 text-white">
             {t.visionMissionValues}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -417,86 +421,103 @@ export default function AboutHero() {
       </section>
 
       {/* Construction Cost Estimator */}
-      <section className={`w-full min-h-screen flex items-center justify-center p-6 transition-colors duration-300 ${theme === "dark" ? "bg-[#181818] text-white" : "bg-[#e6f7ff] text-gray-900"}`}>
-        <div className={`rounded-2xl shadow-2xl w-full max-w-4xl p-8 transition-colors duration-300 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6" style={{ color: "#00BFFF" }}>
-            {t.estimatorTitle}
-          </h2>
-          <form onSubmit={calculateEstimate} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorArea}</label>
-              <input type="number" value={area} onChange={(e) => setArea(e.target.value)} required className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white focus:ring-[#00BFFF]" : "bg-gray-50 border-gray-300 text-gray-900 focus:ring-[#00BFFF]"}`} />
-            </div>
-            <div>
-              <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorFloors}</label>
-              <input type="number" min="1" value={floors} onChange={(e) => setFloors(e.target.value)} required className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white focus:ring-[#00BFFF]" : "bg-gray-50 border-gray-300 text-gray-900 focus:ring-[#00BFFF]"}`} />
-            </div>
-            <div>
-              <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorQuality}</label>
-              <select value={quality} onChange={(e) => setQuality(e.target.value)} className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white" : "bg-gray-50 border-gray-300 text-gray-900"}`}>
-                {t.estimatorQualityOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-              </select>
-            </div>
-            <div>
-              <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorLocation}</label>
-              <select value={projectLocation} onChange={(e) => setProjectLocation(e.target.value)} className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white" : "bg-gray-50 border-gray-300 text-gray-900"}`}>
-                {t.estimatorLocationOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-              </select>
-            </div>
-            <div className="md:col-span-2 flex flex-col gap-3">
-              <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorExtras}</label>
-              <div className="flex gap-6 flex-wrap">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" checked={extras.interior} onChange={(e) => setExtras({ ...extras, interior: e.target.checked })} className="accent-[#00BFFF]" />
-                  {t.estimatorInterior}
-                </label>
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" checked={extras.landscaping} onChange={(e) => setExtras({ ...extras, landscaping: e.target.checked })} className="accent-[#00BFFF]" />
-                  {t.estimatorLandscaping}
-                </label>
-              </div>
-            </div>
-            <div className="md:col-span-2 flex justify-center">
-              <button type="submit" className="px-8 py-3 rounded-lg bg-[#00BFFF] text-white font-semibold hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 transition">
-                {t.estimatorBtn}
-              </button>
-            </div>
-          </form>
-          {estimate && (
-            <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold">{t.estimatorResult}</h3>
-              <p className="text-3xl font-extrabold mt-2" style={{ color: "#00BFFF" }}>
-                ₹ {estimate}
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Construction Cost Estimator Section */}
+<section className={`w-full min-h-screen flex items-center justify-center p-6 transition-colors duration-300 ${theme === "dark" ? "bg-[#181818] text-white" : "bg-[#e6f7ff] text-gray-900"}`}>
+  <div className={`rounded-2xl shadow-2xl w-full max-w-4xl p-8 transition-colors duration-300 ${theme === "dark" ? "bg-gray-900" : "bg-white"}`}>
+    
+    <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6" style={{ color: "#00BFFF" }}>
+      {t.estimatorTitle}
+    </h2>
+    <form onSubmit={calculateEstimate} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div>
+        <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorArea}</label>
+        <input type="number" value={area} onChange={(e) => setArea(e.target.value)} required className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white focus:ring-[#00BFFF]" : "bg-gray-50 border-gray-300 text-gray-900 focus:ring-[#00BFFF]"}`} />
+      </div>
 
-      {/* Awards & Certificates Section */}
-      <section className={`w-full py-16 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-6" style={{ color: "#00BFFF" }}>
-              {t.awardsTitle}
-            </h2>
-            <p className={`text-lg mb-4 ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>
-              {t.awardsDesc}
-            </p>
-            <ul className={`list-disc pl-5 space-y-2 ${theme === "dark" ? "text-gray-200" : "text-gray-700"}`}>
-              {t.awardsList.map((award, i) => <li key={i}>{award}</li>)}
-            </ul>
-          </div>
-          <div className="flex justify-center">
-            <img src={missionImg} alt={t.awardsTitle} className="rounded-2xl shadow-xl w-full max-w-md object-cover" />
-          </div>
+      <div>
+        <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorFloors}</label>
+        <input type="number" min="1" value={floors} onChange={(e) => setFloors(e.target.value)} required className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white focus:ring-[#00BFFF]" : "bg-gray-50 border-gray-300 text-gray-900 focus:ring-[#00BFFF]"}`} />
+      </div>
+
+      <div>
+        <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorQuality}</label>
+        <select value={quality} onChange={(e) => setQuality(e.target.value)} className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white" : "bg-gray-50 border-gray-300 text-gray-900"}`}>
+          {t.estimatorQualityOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+        </select>
+      </div>
+
+      <div>
+        <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorLocation}</label>
+        <select value={projectLocation} onChange={(e) => setProjectLocation(e.target.value)} className={`w-full px-4 py-2 rounded-lg border transition ${theme === "dark" ? "bg-gray-800 border-gray-600 text-white" : "bg-gray-50 border-gray-300 text-gray-900"}`}>
+          {t.estimatorLocationOptions.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+        </select>
+      </div>
+
+      <div className="md:col-span-2 flex flex-col gap-3">
+        <label className={`block mb-2 font-medium ${theme === "dark" ? "text-gray-200" : "text-gray-800"}`}>{t.estimatorExtras}</label>
+        <div className="flex gap-6 flex-wrap">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={extras.interior} onChange={(e) => setExtras({ ...extras, interior: e.target.checked })} className="accent-[#00BFFF]" />
+            {t.estimatorInterior}
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={extras.landscaping} onChange={(e) => setExtras({ ...extras, landscaping: e.target.checked })} className="accent-[#00BFFF]" />
+            {t.estimatorLandscaping}
+          </label>
         </div>
-      </section>
+      </div>
+
+      <div className="md:col-span-2 flex justify-center">
+        <button type="submit" className="px-8 py-3 rounded-lg bg-[#00BFFF] text-white font-semibold hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 transition">
+          {t.estimatorBtn}
+        </button>
+      </div>
+    </form>
+
+    {estimate && (
+      <div className="mt-8 text-center">
+        <h3 className="text-2xl font-bold">{t.estimatorResult}</h3>
+        <p className="text-3xl font-extrabold mt-2" style={{ color: "#00BFFF" }}>
+          ₹ {estimate}
+        </p>
+      </div>
+    )}
+  </div>
+</section>
+
+
+
+{/* Awards & Certificates Section */}
+{/* Awards & Certificates Section */}
+<section className="w-full py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+    
+    <div>
+      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6" style={{ color: "#00BFFF" }}>
+        {t.awardsTitle}
+      </h2>
+      <p className={`text-lg mb-4 ${theme === "dark" ? "text-gray-800" : "text-gray-700"}`}>
+        {t.awardsDesc}
+      </p>
+      <ul className={`list-disc pl-5 space-y-2 ${theme === "dark" ? "text-gray-800" : "text-gray-700"}`}>
+        {t.awardsList.map((award, i) => <li key={i} className="text-gray-800">{award}</li>)}
+      </ul>
+    </div>
+
+    <div className="flex justify-center">
+      <img src={missionImg} alt={t.awardsTitle} className="rounded-2xl shadow-xl w-full max-w-md object-cover" />
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Our Agents & Experts Section */}
       <section className={`w-full py-16 ${theme === "dark" ? "bg-[#222]" : "bg-[#00BFFF]"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-6 text-white">
             {t.expertsTitle}
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
@@ -516,7 +537,7 @@ export default function AboutHero() {
       {/* Community Impact Section */}
       <section className={`py-20 ${theme === "dark" ? "bg-[#181818]" : "bg-[#e6f7ff]"}`} style={{ borderRadius: "100px 0 100px 0" }}>
         <div className="container mx-auto px-6">
-          <h2 className={`text-4xl font-bold text-center mb-16 ${theme === "dark" ? "text-white" : "text-black"}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-center mb-6 ${theme === "dark" ? "text-white" : "text-black"}`}>
             {t.communityTitle}
           </h2>
           <div className="grid gap-10 md:grid-cols-3">

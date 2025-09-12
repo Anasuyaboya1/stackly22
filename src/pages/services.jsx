@@ -278,17 +278,17 @@ const Services = () => {
         />
         <div className={`absolute top-0 left-0 w-full h-full ${isDark ? "bg-black/50" : "bg-black/30"}`}></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white">
-          <h1 className="text-5xl md:text-6xl font-bold text-white text-center">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white text-center">
             Our <span className="text-[#00BFFF]">Services</span>
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl">{t.heroDesc}</p>
+          <p className="mt-4 text-lg md:text-xl leading-relaxed max-w-3xl">{t.heroDesc}</p>
         </div>
       </section>
 
       {/* Services Section */}
       <section className={`py-16 transition-colors duration-500 ${isDark ? "bg-[#181818] text-white" : "bg-[#e6f7ff] text-gray-900"}`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#00BFFF" }}>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-center mb-12" style={{ color: "#00BFFF" }}>
             {t.exploreExpertise}
           </h2>
           <div className="grid gap-12">
@@ -302,10 +302,10 @@ const Services = () => {
                   />
                 </div>
                 <div className={`${index % 2 !== 0 ? "md:order-1" : ""}`}>
-                  <h3 className="text-2xl font-semibold mb-4" style={{ color: "#00BFFF" }}>
+                  <h3 className="text-2xl font-semibold leading-tight mb-4" style={{ color: "#00BFFF" }}>
                     {service.title}
                   </h3>
-                  <p className={`mb-6 text-justify transition-colors duration-500 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                  <p className={`mb-6 text-lg leading-relaxed text-justify transition-colors duration-500 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
                     {service.description}
                   </p>
                   <Link
@@ -324,7 +324,7 @@ const Services = () => {
       {/* Steps Section */}
       <section className={`py-16 ${isDark ? "bg-[#121212]" : "bg-[#f0f8ff]"}`}>
         <div className="container mx-auto px-4">
-          <h2 className={`text-4xl font-bold text-center mb-12 ${isDark ? "text-white" : "text-black"}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold leading-tight text-center mb-12 ${isDark ? "text-white" : "text-black"}`}>
             {t.howToStart}
           </h2>
           <div className="grid md:grid-cols-4 gap-10">
@@ -333,8 +333,8 @@ const Services = () => {
                 <div className={`rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg ${isDark ? "bg-[#181818]" : "bg-[#e6f7ff]"}`}>
                   <span className="text-3xl font-bold text-[#00BFFF]">{item.step}</span>
                 </div>
-                <h3 className={`text-xl font-semibold mb-2 ${isDark ? "text-white" : "text-black"}`}>{item.title}</h3>
-                <p className={isDark ? "text-gray-200" : "text-gray-700"}>{item.text}</p>
+                <h3 className={`text-xl font-semibold leading-tight mb-2 ${isDark ? "text-white" : "text-black"}`}>{item.title}</h3>
+                <p className={isDark ? "text-gray-200 text-lg leading-relaxed" : "text-gray-700 text-lg leading-relaxed"}>{item.text}</p>
               </div>
             ))}
           </div>
@@ -344,20 +344,25 @@ const Services = () => {
       {/* Why Choose Us */}
       <section className={`relative py-32 flex items-center justify-center transition-colors duration-500 ${isDark ? "bg-[#181818] text-white" : "bg-[#E6F7FD] text-black"}`}>
         <div className="relative z-10 container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6">{t.buildEmpire}</h2>
-          <p className="text-base md:text-lg mb-16 max-w-3xl mx-auto">{t.buildDesc}</p>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{t.buildEmpire}</h2>
+          <p className="text-lg leading-relaxed mb-16 max-w-3xl mx-auto">{t.buildDesc}</p>
           <div className="flex flex-col md:flex-row justify-center gap-10 mb-16">
             {t.empireCards.map((item, index) => (
               <div key={index} className={`p-8 rounded-2xl shadow-lg hover:scale-105 transition transform duration-300 w-full md:w-80 ${isDark ? "bg-[#222] text-gray-200" : "bg-white text-gray-800"}`}>
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-2xl font-bold text-[#00BFFF] mb-3">{item.title}</h3>
-                <p className={isDark ? "text-gray-300" : "text-gray-700"}>{item.text}</p>
+                <h3 className="text-2xl font-bold leading-tight text-[#00BFFF] mb-3">{item.title}</h3>
+                <p className={isDark ? "text-gray-300 text-lg leading-relaxed" : "text-gray-700 text-lg leading-relaxed"}>{item.text}</p>
               </div>
             ))}
           </div>
           <a
             href="/contactus"
-            className="inline-block px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-[#00BFFF] to-[#00E0FF] text-white shadow-lg hover:scale-105 transition-transform duration-300"
+            className="inline-block px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-[#00BFFF] to-[#00E0FF] text-white shadow-lg border-2 border-[#00BFFF] hover:scale-105 transition-transform duration-300"
+            style={{
+              textShadow: '0 2px 8px rgba(0,0,0,0.25), 0 1px 0 #00BFFF',
+              filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.10))',
+              backgroundBlendMode: 'multiply',
+            }}
           >
             {t.startJourney}
           </a>
@@ -383,7 +388,7 @@ const Services = () => {
           }}
         ></div>
         <div className="relative z-10 container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-[#00BFFF] drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-12 text-[#00BFFF] drop-shadow-lg">
             {t.testimonialsTitle}
           </h2>
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -393,7 +398,7 @@ const Services = () => {
                 className="p-8 rounded-2xl backdrop-blur-lg bg-white/20 dark:bg-black/30 shadow-xl border border-white/20 hover:scale-105 transition-transform duration-300"
               >
                 <div className="text-6xl text-[#00BFFF] mb-4">“</div>
-                <p className="italic text-lg mb-6 leading-relaxed">{testimonial.text}</p>
+                <p className="italic text-lg leading-relaxed mb-6">{testimonial.text}</p>
                 <h4 className="font-bold text-xl text-[#00BFFF]">- {testimonial.name}</h4>
               </div>
             ))}
@@ -421,8 +426,8 @@ const Services = () => {
           }}
         ></div>
         <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-6">{t.readyTitle}</h2>
-          <p className="mb-8 text-lg max-w-2xl mx-auto">{t.readyDesc}</p>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{t.readyTitle}</h2>
+          <p className="mb-8 text-lg leading-relaxed max-w-2xl mx-auto">{t.readyDesc}</p>
           <Link
             to="/contactus"
             className="px-8 py-3 bg-[#00BFFF] text-white rounded-lg font-semibold hover:bg-blue-500 transition"

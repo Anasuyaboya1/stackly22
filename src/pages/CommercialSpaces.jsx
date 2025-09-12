@@ -240,11 +240,11 @@ export default function CommercialSpacesPage() {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
         <div className="relative z-10 px-4 sm:px-6">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-snug text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 text-white">
             {t.heroTitle}{" "}
             <span style={{ color: "#00bfff" }}>{t.heroHighlight}</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-white">
+          <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-white">
             {t.heroDesc}
           </p>
         </div>
@@ -268,14 +268,14 @@ export default function CommercialSpacesPage() {
           {/* Right: Property Details */}
           <div className="space-y-4 animate-fadeInRight">
             <h2
-              className={`text-3xl font-bold ${
+              className={`text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
               }`}
             >
               {t.featuredTitle}
             </h2>
             <p
-              className={`${
+              className={`text-lg leading-relaxed $${
                 theme === "dark" ? "text-gray-300" : "text-gray-700"
               }`}
               style={{ textAlign: "justify" }}
@@ -318,13 +318,13 @@ export default function CommercialSpacesPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
           <div>
             <h2
-              className="text-4xl md:text-5xl font-extrabold mb-4 leading-snug"
+              className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2"
               style={{ color: theme === "dark" ? "#00bfff" : "#222" }}
             >
               {t.whoTitle}
             </h2>
             <p
-              className={`text-lg mb-6 text-justify ${
+              className={`text-lg leading-relaxed mb-6 text-justify ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
               }`}
             >
@@ -340,14 +340,14 @@ export default function CommercialSpacesPage() {
                 }`}
               >
                 <h3
-                  className="text-xl font-semibold mb-2"
+                  className="text-xl font-semibold leading-tight mb-2"
                   style={{ color: "#00bfff" }}
                 >
                   {card.title}
                 </h3>
                 <p
                   className={
-                    theme === "dark" ? "text-gray-200" : "text-gray-600"
+                    theme === "dark" ? "text-gray-200 text-lg leading-relaxed" : "text-gray-600 text-lg leading-relaxed"
                   }
                 >
                   {card.desc}
@@ -368,7 +368,7 @@ export default function CommercialSpacesPage() {
           style={{ background: "rgba(0,191,255,0.7)" }}
         ></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 drop-shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-8 drop-shadow-lg">
             {t.benefitsTitle}
           </h2>
           <div className="grid lg:grid-cols-3 gap-8">
@@ -381,8 +381,8 @@ export default function CommercialSpacesPage() {
                     : "bg-white text-black"
                 }`}
               >
-                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-                <p className="text-sm">{card.desc}</p>
+                <h3 className="text-xl font-semibold leading-tight mb-3">{card.title}</h3>
+                <p className="text-lg leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -397,7 +397,7 @@ export default function CommercialSpacesPage() {
       >
         <div className="max-w-6xl mx-auto px-6">
           <h2
-            className="text-4xl md:text-5xl font-bold text-center mb-12"
+            className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight text-center mb-8"
             style={{ color: "#00bfff" }}
           >
             {t.faqTitle}
@@ -414,7 +414,7 @@ export default function CommercialSpacesPage() {
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold leading-tight">{faq.question}</h3>
                   <span
                     className="font-bold text-xl"
                     style={{ color: "#00bfff" }}
@@ -425,7 +425,7 @@ export default function CommercialSpacesPage() {
                 {openIndex === index && (
                   <p
                     className={
-                      theme === "dark" ? "mt-4 text-gray-200" : "mt-4 text-gray-600"
+                      theme === "dark" ? "mt-4 text-gray-200 text-lg leading-relaxed" : "mt-4 text-gray-600 text-lg leading-relaxed"
                     }
                   >
                     {faq.answer}
@@ -445,11 +445,11 @@ export default function CommercialSpacesPage() {
 >
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
     <div className="space-y-6 flex flex-col justify-center h-full">
-      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-800">
+  <h2 className="text-2xl md:text-3xl font-semibold leading-snug tracking-tight mb-2">
         {t.ctaTitle}
       </h2>
       <p
-        className={`text-lg ${
+        className={`text-lg leading-relaxed ${
           theme === "dark" ? "text-gray-200" : "text-gray-600"
         }`}
       >
